@@ -137,6 +137,16 @@ Judges can directly test all endpoints from the browser.
 
 ---
 
+## Running Tests
+
+The core matching and explanation logic is covered using unit tests written with **Pytest**.
+
+To run all tests locally:
+
+```bash
+pytest
+
+
 ## Running Locally
 
 ```bash
