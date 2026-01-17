@@ -193,7 +193,7 @@ def application(data: ApplicationInput):
 
     return {"matches": matches}
 
-@app.get("/explain/{job_id}", response_class=PlainTextResponse)
+@app.post("/explain/{job_id}", response_class=PlainTextResponse)
 def explain_job(job_id: str, data: ApplicationInput):
     result = application(data)
     matches = result["matches"]
@@ -215,4 +215,4 @@ def explain_job(job_id: str, data: ApplicationInput):
 
             return explanation
 
-    return {"error": "Job not found"}
+    raise HTTPException(status_code=404, detail="Job not found")
